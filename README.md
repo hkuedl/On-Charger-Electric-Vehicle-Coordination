@@ -14,19 +14,19 @@ The rapid electrification of transport poses significant stability and economic 
 You can build the **hardware-in-the-loop platform** with the power supply, electronic load, oscilloscope, microcontrollers (on-board chargers), and host computer (microgrid platform). `Hardware-in-the-loop_Platform` is loaded with the code deployed on them.
 > **Note:** The microcontrollers are coded in  **C language** and the host computer is coded in **Python**.
 > 
-![content](Figures/Platform.png)
+![content](Figures/Hardware_platform.png)
 
 To use the provided code, you are supposed to:
 - Load the dataset `Simulation_Platform/dataset/ev_load/.csv` into microcontrollers.
 - Compile `Hardware-in-the-loop_Platform/On-board_Charger/User_code/.uvprojx` and download the code to the flash memory of microcontrollers.
 - Run `Hardware-in-the-loop_Platform/Microgrid_Platform/run.py` on host computer.
-> **Note:** Please ensure the microcontroller is configured with at least 192 KB of SRAM and 1 MB of FLASH.
+> **Note:** Please ensure the microcontroller is configured with at least 128 KB of SRAM and 1 MB of FLASH.
 > 
 > **Note:** Please ensure the communication network is connected and stable before use.
- 
+
 ## Simulation platform
 
-You can also build the **simulation platform** with the tower server. `Simulation_Platform` is loaded with the code deployed on it.
+You can also build the **simulation platform** with the tower server for large-scale numerical simulation. `Simulation_Platform` is loaded with the code deployed on it.
 
 To use the provided code, please run `Simulation_Platform/test.ipynb` to obtain the results:
 
@@ -58,12 +58,15 @@ Enable on-board chargers to optimize charging schedules autonomously with lightw
 
 ![content](Figures/Carbon_emission.png)
 
-## Requirement
+ - Impacts on grid security
+
+![content](Figures/Grid_security.png)
+
+## Requirements
 
 Experimental platform:
-- Microcontroller: μVision 5.3+ and STM32F405 MCU
+- Microcontroller: μVision 5.3+ and STM32G474 MCU
 - Host computer: Python 3.8+ and Inter i7 12700 4.9GHz CPU
-
 
 Simulation platform:
 - Python 3.8+
