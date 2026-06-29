@@ -16,6 +16,7 @@ You can build the **hardware-in-the-loop platform** with the power supply, elect
 > 
 ![content](Figures/Hardware_platform.png)
 
+### Quick Start (Hardware-in-the-Loop)
 To use the provided code, you are supposed to:
 - Load the dataset `Simulation_Platform/dataset/ev_load/.csv` into microcontrollers.
 - Compile `Hardware-in-the-loop_Platform/On-board_Charger/User_code/.uvprojx` and download the code to the flash memory of microcontrollers.
@@ -30,17 +31,14 @@ You can also build the **simulation platform** with the tower server for large-s
 
 To use the provided code, please run `Simulation_Platform/test.ipynb` to obtain the results:
 
-`operator.solution_centralized()`: Optimal
-
-`operator.solution_distributed()`: Coordinated
-
-`operator.solution_tiny()`: Proposed
-
-`operator.solution_global()`: Global
-
-`operator.solution_local()`: Local
-
-`operator.solution_plug()`: Plug
+| Method | Function Call |
+|--------|-------------|
+| Optimal (centralized) | `operator.solution_centralized()` |
+| Coordinated (distributed) | `operator.solution_distributed()` |
+| Proposed (lightweight) | `operator.solution_tiny()` |
+| Global baseline | `operator.solution_global()` |
+| Local baseline | `operator.solution_local()` |
+| Plug-and-charge | `operator.solution_plug()` |
 
 ## Experimental results
 
@@ -50,7 +48,7 @@ Enable on-board chargers to optimize charging schedules autonomously with lightw
 
 ![content](Figures/Performance_comparison.png)
 
- - Impact on gird infrasturcture
+ - Impact on gird infrastructure
 
 ![content](Figures/Grid_infrastructure.png)
 
@@ -65,11 +63,15 @@ Enable on-board chargers to optimize charging schedules autonomously with lightw
 ## Requirements
 
 Experimental platform:
-- Microcontroller: μVision 5.3+ and STM32G474 MCU
-- Host computer: Python 3.8+ and Inter i7 12700 4.9GHz CPU
+- **Microcontroller:** Keil μVision 5.3+ with STM32G474 MCU
+- **Host computer:** Python 3.8+, Intel i7-12700 4.9 GHz CPU
 
 Simulation platform:
 - Python 3.8+
 - PyTorch 1.4.1+
 - NVIDIA GeForce RTX 3080 Ti 12GB GPU
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
  
